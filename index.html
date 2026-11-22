@@ -1,70 +1,216 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>H1 - Bootstrap is active and pixel ratio is taken into consideration by default</h1>
-	<h2>H2</h2>
-	<h3>H3</h3>
-	<h4>H4</h4>
-	
-	<div>
-		<h4>Close button</h4>
-		<button type="button" class="close" aria-label="Close">
-		  <span aria-hidden="true">&times;</span>
-		</button>
-	</div>
-	
-	<div>
-		<h4>Close button with text</h4>
-		<button type="button" class="close" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-			Text
-		</button>
-	</div>
-	
-	
-	<div><button type="button" class="btn btn-primary">Primary</button></div>
-	
-	<div>This is a normal text without additional styling</div>
-	
-	
-	Pixel ratio: <div id="pixelRatio"></div>
-
-	<script type="text/javascript">
-		console.log("Hello world");
-		document.getElementById("pixelRatio").innerHTML = window.devicePixelRatio;
-	</script>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
-
-
-<!-- <!doctype html>
-<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Portfolio</title>
-  <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adam Gazsi — Software Engineer</title>
+  <meta name="description" content="Adam Gazsi — Senior Java Developer. Selected projects in vehicle physics, embedded systems and full-stack development.">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fbfbfa;
+      --surface: #ffffff;
+      --text: #1d2228;
+      --muted: #5b6470;
+      --faint: #8a929c;
+      --border: #e4e6e9;
+      --accent: #1f4e79;
+      --accent-soft: #eef3f8;
+      --max: 760px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1f2329;
+        --surface: #262b32;
+        --text: #e6e8eb;
+        --muted: #a3abb5;
+        --faint: #7b8490;
+        --border: #363d46;
+        --accent: #8db4d9;
+        --accent-soft: #2a3440;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    header { padding: 88px 0 56px; border-bottom: 1px solid var(--border); }
+    .identity { display: flex; align-items: center; gap: 22px; }
+    .identity img {
+      width: 76px; height: 76px; border-radius: 50%;
+      border: 1px solid var(--border); flex-shrink: 0;
+    }
+    h1 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 600; font-size: 2.4rem; line-height: 1.15;
+      letter-spacing: -0.01em; margin: 0;
+    }
+    .role { color: var(--muted); font-size: 1.05rem; margin-top: 4px; }
+    .intro { margin: 32px 0 0; font-size: 1.075rem; color: var(--text); max-width: 640px; }
+    .intro p { margin: 0 0 14px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 24px; font-size: 0.95rem; font-weight: 500; }
+
+    section { padding: 56px 0; }
+    .section-label {
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--faint); margin: 0 0 28px;
+    }
+
+    .project { padding: 28px 0; border-top: 1px solid var(--border); }
+    .project:first-of-type { border-top: none; padding-top: 0; }
+    .project-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+    h3 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.35rem; font-weight: 600; margin: 0; line-height: 1.3;
+    }
+    .featured-tag {
+      display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--accent); background: var(--accent-soft);
+      padding: 3px 9px; border-radius: 4px; margin-bottom: 10px;
+    }
+    .project p { margin: 10px 0 0; color: var(--muted); }
+    .stack { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 14px; padding: 0; list-style: none; }
+    .stack li {
+      font-size: 0.8rem; color: var(--muted); border: 1px solid var(--border);
+      padding: 2px 10px; border-radius: 999px; background: var(--surface);
+    }
+    .project-links { display: flex; gap: 20px; margin-top: 16px; font-size: 0.92rem; font-weight: 500; }
+    .arrow { display: inline-block; transition: transform .15s ease; }
+    a:hover .arrow { transform: translateX(3px); }
+
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px; }
+    .skills h4 { margin: 0 0 8px; font-size: 0.95rem; font-weight: 600; }
+    .skills p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    footer { border-top: 1px solid var(--border); padding: 32px 0 56px; color: var(--faint); font-size: 0.88rem; }
+
+    @media (max-width: 560px) {
+      header { padding: 56px 0 40px; }
+      h1 { font-size: 1.9rem; }
+      .identity img { width: 60px; height: 60px; }
+      .wrap { padding: 0 16px; }
+    }
+  </style>
 </head>
 <body>
-  <app-root></app-root>
-<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="es2015-polyfills.js" nomodule></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script></body>
-</html> -->
+  <header>
+    <div class="wrap">
+      <div class="identity">
+        <img src="https://avatars.githubusercontent.com/u/10939943?v=4" alt="Adam Gazsi">
+        <div>
+          <h1>Adam Gazsi</h1>
+          <div class="role">Senior Java Developer</div>
+        </div>
+      </div>
+      <div class="intro">
+        <p>I build backend systems on the JVM and enjoy taking ideas all the way from hardware and physics to the user interface. Outside of enterprise work I explore real-time simulation, embedded devices and home-lab infrastructure.</p>
+      </div>
+      <nav class="links">
+        <a href="https://github.com/gazsiadam">GitHub</a>
+        <a href="https://www.linkedin.com/in/adamgazsi/">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <section id="projects">
+      <div class="wrap">
+        <h2 class="section-label">Selected Projects</h2>
+
+        <article class="project">
+          <span class="featured-tag">Featured</span>
+          <div class="project-head">
+            <h3>EDM92 — Car &amp; Truck Physics</h3>
+          </div>
+          <p>A real-time vehicle dynamics simulation for cars and trucks built in Unity. The project models how a vehicle actually behaves on the road — suspension travel and load transfer, tyre grip, drivetrain and engine torque delivery — so that light passenger cars and heavy trucks each handle with their own distinct, believable character.</p>
+          <ul class="stack">
+            <li>Unity</li><li>C#</li><li>Vehicle dynamics</li><li>Physics simulation</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://play.unity.com/en/games/04c0a9ca-ec40-4f7d-b63b-4e497ac435a8/builds" target="_blank" rel="noopener">Play in browser <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>Car Part Search</h3>
+          </div>
+          <p>A meta-search tool for car parts in Romania. Enter a part code once and it builds the search URLs for more than 35 Romanian online parts stores, so prices and availability can be compared in one place. You can open each store's results individually or all at once. It is a standalone Angular application deployed on Vercel.</p>
+          <ul class="stack">
+            <li>Angular</li><li>TypeScript</li><li>Vercel</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://car-part-search.vercel.app/" target="_blank" rel="noopener">Live demo <span class="arrow">&rarr;</span></a>          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>Thermostat</h3>
+          </div>
+          <p>A full-stack smart thermostat for combi boilers running on a Raspberry Pi 4. A Spring Boot service reads a DHT11 temperature sensor and drives a relay over GPIO, pulls outdoor conditions from the OpenWeatherMap API, optionally logs readings to AWS DynamoDB, and pushes live data over WebSockets to an Angular control panel served behind an Apache reverse proxy.</p>
+          <ul class="stack">
+            <li>Java</li><li>Spring Boot</li><li>Angular</li><li>TypeScript</li><li>Raspberry Pi</li><li>GPIO</li><li>WebSockets</li><li>AWS DynamoDB</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/gazsiadam/thermostat" target="_blank" rel="noopener">View repository <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>Raspberry Server</h3>
+          </div>
+          <p>A reproducible setup guide for turning a Raspberry Pi into a home server: network-attached storage with OpenMediaVault exposed over NFS and SMB, a Ubiquiti UniFi network controller, and a Java 11 (Amazon Corretto) runtime that hosts the thermostat service.</p>
+          <ul class="stack">
+            <li>Linux</li><li>Raspberry Pi OS</li><li>OpenMediaVault</li><li>NFS / SMB</li><li>UniFi</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/gazsiadam/raspberry-server" target="_blank" rel="noopener">View repository <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section style="padding-top: 0;">
+      <div class="wrap">
+        <h2 class="section-label">Areas of Expertise</h2>
+        <div class="skills">
+          <div>
+            <h4>Backend</h4>
+            <p>Java, Spring Boot, REST and WebSocket APIs, AWS</p>
+          </div>
+          <div>
+            <h4>Frontend</h4>
+            <p>Angular, TypeScript, HTML &amp; CSS</p>
+          </div>
+          <div>
+            <h4>Simulation &amp; Embedded</h4>
+            <p>Unity, C#, vehicle physics, Raspberry Pi, Linux</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">&copy; <span id="year">2026</span> Adam Gazsi</div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
